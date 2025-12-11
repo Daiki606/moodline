@@ -19,27 +19,28 @@ Python 3 が必要である。
 ```bash
 git clone https://github.com/Daiki606/moodline.git
 cd moodline
-chmod +x moodline` 
+chmod +x moodline`
+```
 
 ## 使い方
 
 ### 基本的な例
 
-echo "今日はとても楽しい授業だった" | ./moodline
+```echo "今日はとても楽しい授業だった" | ./moodline```
 
 出力例:
 [positive] 今日はとても楽しい授業だった
 
 ### ネガティブな例
 
-echo "今日は最悪な一日だった" | ./moodline
+```echo "今日は最悪な一日だった" | ./moodline```
 
  出力例:
 [negative] 今日は最悪な一日だった
 
 ### 複数行を処理する例
 
-printf "楽しい\n最悪\n怒っている\n普通\n" | ./moodline
+```printf "楽しい\n最悪\n怒っている\n普通\n" | ./moodline```
 
  出力例:
  
@@ -50,10 +51,10 @@ printf "楽しい\n最悪\n怒っている\n普通\n" | ./moodline
 
 ### 標準入力がない場合
 
-./moodline
+``` ./moodline ```
 
 標準エラー出力に次のようなメッセージを出して終了する。
-Usage: echo 'text' | moodline
+Usage: ```echo 'text' | moodline```
 
 このとき終了ステータスは 1 となる。
 
@@ -100,10 +101,10 @@ moodline は，あらかじめ決めたキーワードのリストを用いて�
 このリポジトリには，動作確認のための Bash スクリプト test.bash が含まれている。
 
 ローカルでのテスト実行
-
-chmod +x test.bash
-./test.bash
-
+```
+ chmod +x test.bash
+./test.bash 
+```
 このスクリプトでは，次のような点を確認している。
 
 -ポジティブな文に対して [positive] が付くこと
