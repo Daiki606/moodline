@@ -1,0 +1,33 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install flake8
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install flake8
+
+      - name: Lint
+        run: |
+          flake8 moodline
+
+      - name: Run tests
+        run: |
+          chmod +x moodline
+          chmod +x test.bash
+          ./test.bash
+
