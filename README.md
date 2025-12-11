@@ -109,5 +109,5 @@ chmod +x test.bash
 ## ライセンスと著作権
 
 このプロジェクトは MIT License の下で公開されている。
-詳しくは同梱の LICENSE ファイルを参照のこと
+詳しくは同梱の LICENSE ファイルを参照のこと。
 
