@@ -1,4 +1,9 @@
 #!/bin/bash
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Daiki Yamashita
+set -eu
+…
+
 set -eu
 
 # Test 1: positive sentence
