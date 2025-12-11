@@ -16,7 +16,7 @@
 
 Python 3 が必要である。
 
-```bash
+bash
 git clone https://github.com/<YOUR-USERNAME>/moodline.git
 cd moodline
 chmod +x moodline
