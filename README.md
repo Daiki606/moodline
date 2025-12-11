@@ -16,10 +16,10 @@
 
 Python 3 が必要である。
 
-bash
+```bash
 git clone https://github.com/Daiki606/moodline.git
 cd moodline
-chmod +x moodline
+chmod +x moodline` 
 
 ## 使い方
 
