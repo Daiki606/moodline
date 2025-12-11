@@ -2,9 +2,6 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2025 Daiki Yamashita
 set -eu
-…
-
-set -eu
 
 # Test 1: positive sentence
 out1="$(printf '今日はとても楽しい授業だった\n' | ./moodline)"
@@ -21,7 +18,7 @@ out3="$(printf 'ふざけるなよ\n' | ./moodline)"
 echo "Test3: $out3"
 echo "$out3" | grep '\[angry\]' > /dev/null
 
-# Test 4: no stdin should cause error (exit status != 0)
+# Test 4: no stdin should cause error
 if ./moodline 2>stderr.log; then
   echo "Error: moodline should fail when no stdin is provided" >&2
   exit 1
@@ -30,4 +27,3 @@ fi
 grep 'Usage: echo' stderr.log > /dev/null
 
 echo "All tests passed."
-
