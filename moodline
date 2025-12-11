@@ -4,20 +4,24 @@
 
 import sys
 
+
 POSITIVE_WORDS = [
     "楽しい", "うれしい", "嬉しい", "最高", "よかった", "良かった",
     "great", "good", "awesome", "happy",
 ]
+
 
 NEGATIVE_WORDS = [
     "最悪", "疲れた", "つらい", "辛い", "嫌だ", "むかつく",
     "bad", "terrible", "awful", "sad",
 ]
 
+
 ANGRY_WORDS = [
     "怒る", "怒って", "腹立つ", "イライラ", "ふざけるな",
     "angry", "mad",
 ]
+
 
 def classify_mood(text: str) -> str:
     """Return mood label for given text."""
@@ -41,6 +45,7 @@ def classify_mood(text: str) -> str:
         return "[neutral]"
     return label
 
+
 def shorten(text: str, limit: int = 80) -> str:
     """Shorten text if too long."""
     text = text.rstrip("\n")
@@ -48,8 +53,9 @@ def shorten(text: str, limit: int = 80) -> str:
         return text
     return text[: limit - 1] + "…"
 
+
 def main() -> None:
-    # When stdin is not provided → show usage and exit with error
+    """Main entry point."""
     if sys.stdin.isatty():
         print("Usage: echo 'text' | moodline", file=sys.stderr)
         sys.exit(1)
@@ -60,6 +66,7 @@ def main() -> None:
         mood = classify_mood(line)
         summary = shorten(line)
         print(f"{mood} {summary}")
+
 
 if __name__ == "__main__":
     main()
