@@ -17,7 +17,7 @@
 Python 3 が必要である。
 
 bash
-git clone https://github.com/<YOUR-USERNAME>/moodline.git
+git clone https://github.com/Daiki606/moodline.git
 cd moodline
 chmod +x moodline
 
@@ -26,19 +26,23 @@ chmod +x moodline
 ### 基本的な例
 
 echo "今日はとても楽しい授業だった" | ./moodline
+
 出力例:
 [positive] 今日はとても楽しい授業だった
 
 ### ネガティブな例
 
 echo "今日は最悪な一日だった" | ./moodline
+
  出力例:
 [negative] 今日は最悪な一日だった
 
 ### 複数行を処理する例
 
 printf "楽しい\n最悪\n怒っている\n普通\n" | ./moodline
+
  出力例:
+ 
 [positive] 楽しい
 [negative] 最悪
 [angry] 怒っている
@@ -52,11 +56,13 @@ printf "楽しい\n最悪\n怒っている\n普通\n" | ./moodline
 Usage: echo 'text' | moodline
 
 このとき終了ステータスは 1 となる。
+
 スクリプトやテストからは，この終了ステータスを利用して動作を確認できる。
 
 ### 入出力仕様
 
 入力（標準入力）
+
 UTF-8 テキストを想定する。
 1 行ごとに 1 つの文として扱う。
 空行（空白文字しか含まない行）は無視する。
@@ -64,8 +70,11 @@ UTF-8 テキストを想定する。
 ### 出力（標準出力）
 
 各入力行に対して，次の形式で 1 行ずつ出力する。
+
 [LABEL] 元の行（長い場合は末尾を省略）
+
 LABEL は [positive], [negative], [angry], [neutral] のいずれかである。
+
 行が長すぎる場合は，約 80 文字を上限として末尾に … を付けて省略する。
 
 ### 実装の概要
@@ -83,6 +92,7 @@ moodline は，あらかじめ決めたキーワードのリストを用いて�
 
 このように，単純なキーワード照合に基づく処理であり，
 文脈や微妙なニュアンスを理解することはできない。
+
 あくまで「ざっくりとした目安」を付けるための道具として設計している。
 
 ## テスト
@@ -90,10 +100,12 @@ moodline は，あらかじめ決めたキーワードのリストを用いて�
 このリポジトリには，動作確認のための Bash スクリプト test.bash が含まれている。
 
 ローカルでのテスト実行
+
 chmod +x test.bash
 ./test.bash
 
 このスクリプトでは，次のような点を確認している。
+
 -ポジティブな文に対して [positive] が付くこと
 -ネガティブな文に対して [negative] が付くこと
 -怒りを含む文に対して [angry] が付くこと
