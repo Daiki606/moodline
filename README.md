@@ -32,13 +32,13 @@ echo "今日はとても楽しい授業だった" | ./moodline
 ### ネガティブな例
 
 echo "今日は最悪な一日だった" | ./moodline
-出力例:
+ 出力例:
 [negative] 今日は最悪な一日だった
 
 ### 複数行を処理する例
 
 printf "楽しい\n最悪\n怒っている\n普通\n" | ./moodline
-出力例:
+ 出力例:
 [positive] 楽しい
 [negative] 最悪
 [angry] 怒っている
